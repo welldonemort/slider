@@ -1077,6 +1077,11 @@ body * {
 
 /* SLIDER */
 
+.slider {
+  width: 600px;
+  background: url(../images/projects.svg);
+}
+
 .slider-element-2,
 .slider-element-3 {
   display: none;
