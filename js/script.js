@@ -27,13 +27,53 @@ const setEntity = (index) => {
   slider.style.backgroundImage = `url(${entities[index].img})`;
 }
 
-let currentIndex = 0
+let currentIndex = 0;
 
 arrowLeft.addEventListener('click', () => {
-  setEntity(currentIndex - 1);
-  currentIndex -= 1;
+  switch (currentIndex) {
+    case 0:
+      dotOne.style.opacity = 0.3;
+      dotThree.style.opacity = 1;
+      break;
+    case 1:
+      dotTwo.style.opacity = 0.3;
+      dotOne.style.opacity = 1;
+      break;
+    case 2:
+      dotThree.style.opacity = 0.3;
+      dotTwo.style.opacity = 1;
+      break;
+  }
+
+  if (currentIndex == 0) {
+    setEntity(entities.length - 1);
+    currentIndex = entities.length - 1;
+  } else {
+    setEntity(currentIndex - 1);
+    currentIndex -= 1;
+  }
 })
 arrowRight.addEventListener('click', () => {
-  setEntity(currentIndex + 1);
-  currentIndex += 1;
+  switch (currentIndex) {
+    case 0:
+      dotOne.style.opacity = 0.3;
+      dotTwo.style.opacity = 1;
+      break;
+    case 1:
+      dotTwo.style.opacity = 0.3;
+      dotThree.style.opacity = 1;
+      break;
+    case 2:
+      dotThree.style.opacity = 0.3;
+      dotOne.style.opacity = 1;
+      break;
+  }
+
+  if (currentIndex == entities.length - 1) {
+    setEntity(0);
+    currentIndex = 0;
+  } else {
+    setEntity(currentIndex + 1);
+    currentIndex += 1;
+  }
 })
