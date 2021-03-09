@@ -9,6 +9,10 @@ const sliderElOne = document.querySelector('.slider-element-1');
 const sliderElTwo = document.querySelector('.slider-element-2');
 const sliderElThree = document.querySelector('.slider-element-3');
 
+const lineOne = document.querySelector('.line-decorate-1');
+const lineTwo = document.querySelector('.line-decorate-2');
+const lineThree = document.querySelector('.line-decorate-3');
+
 const entities = [
   {
     img: './images/projects.svg'
@@ -30,18 +34,26 @@ const setEntity = (index) => {
 let currentIndex = 0;
 
 arrowLeft.addEventListener('click', () => {
+
+
   switch (currentIndex) {
     case 0:
       dotOne.style.opacity = 0.3;
       dotThree.style.opacity = 1;
+      lineOne.classList.remove('brown-hypertext');
+      lineThree.classList.add('brown-hypertext');
       break;
     case 1:
       dotTwo.style.opacity = 0.3;
       dotOne.style.opacity = 1;
+      lineTwo.classList.remove('brown-hypertext');
+      lineOne.classList.add('brown-hypertext');
       break;
     case 2:
       dotThree.style.opacity = 0.3;
       dotTwo.style.opacity = 1;
+      lineThree.classList.remove('brown-hypertext');
+      lineTwo.classList.add('brown-hypertext');
       break;
   }
 
@@ -58,14 +70,20 @@ arrowRight.addEventListener('click', () => {
     case 0:
       dotOne.style.opacity = 0.3;
       dotTwo.style.opacity = 1;
+      lineOne.classList.remove('brown-hypertext');
+      lineTwo.classList.add('brown-hypertext');
       break;
     case 1:
       dotTwo.style.opacity = 0.3;
       dotThree.style.opacity = 1;
+      lineTwo.classList.remove('brown-hypertext');
+      lineThree.classList.add('brown-hypertext');
       break;
     case 2:
       dotThree.style.opacity = 0.3;
       dotOne.style.opacity = 1;
+      lineThree.classList.remove('brown-hypertext');
+      lineOne.classList.add('brown-hypertext');
       break;
   }
 
