@@ -1112,10 +1112,14 @@ body * {
 }
 
 .dot:hover {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .brown-hypertext {
   border-bottom: 1px solid #e3b873;
   color: #e3b873 !important;
+}
+
+a {
+  cursor: pointer;
 }
